@@ -165,6 +165,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\BienvenueAvecVue.cshtml" />
     <Content Include="Views\Serie01\CalculatriceV1.cshtml" />
+    <Content Include="Views\Serie01\CalculatriceV2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

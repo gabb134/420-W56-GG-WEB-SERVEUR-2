@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "CalculatriceV5";
+}
+
+<h2>CalculatriceV5</h2>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalculatriceV5</title>
+    <style id="style" type="text/css">
+        BODY, INPUT, SELECT {
+            font-family: Verdana;
+            font-size: 16px;
+        }
+
+        .sRecommencer {
+            font-size: 10px;
+            vertical-align: 3px;
+        }
+
+        .sResultat {
+            color: White;
+            background-color: Red;
+            font-weight: bold;
+            border: solid 1px red;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .sRouge {
+            color: White;
+            background-color: Red;
+        }
+
+        .sTitreApplication {
+            font-size: 32px;
+            margin-top: 0px;
+        }
+
+        .sTitreSection {
+            font-size: 24px;
+        }
+
+        .sZoneNombre {
+            width: 25px;
+            text-align: right;
+        }
+
+        .visible {
+            display: normal;
+        }
+
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="sTitreApplication">
+            Petite calculatrice entière version 5 en MVC utilisant un modèle<br />
+            par Mohamed Airouche
+
+            <input type="submit" value="Recommencer" id="btnRecommencer" class="sRecommencer" onclick="location.href='/Serie02/CalculatriceV5'" />
+        </p>
+        <p class="sTitreSection">
+            Présentation
+        </p>
+        <p>
+            Le but de cette application est de simuler une petite calculatrice entière.
+        </p>
+        <p class="sTitreSection">
+            Consignes
+        </p>
+        <p>
+            Entrez un premier nombre, l'opérateur, puis un deuxième nombre. Cliquez ensuite
+            sur le bouton "=" pour effectuer l'opération arithmétique.
+        </p>
+
+        <p>
+
+
+            <form action="/sol-exercices01/Serie02/CalculatriceV5" method="post">
+                <input class="sZoneNombre" data-val="true" data-val-number="Le champ intNombre1 doit être un nombre." data-val-required="Le champ intNombre1 est requis." id="intNombre1" maxlength="2" name="intNombre1" type="text" value="0" /><select id="ddlOperateur" name="ddlOperateur" onChange="this.form.submit()">
+                    <option value="-1"></option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="x">*</option>
+                    <option value="/">/</option>
+                    <option value="Mod">Mod</option>
+                    <option value="%">%</option>
+                </select><input class="sZoneNombre visible" data-val="true" data-val-number="Le champ intNombre2 doit être un nombre." data-val-required="Le champ intNombre2 est requis." id="intNombre2" maxlength="2" name="intNombre2" type="text" value="0" />            <input type="submit" name="btnCalcul" value="=" id="btnCalcul" />
+                <span id="lblVerdictFinal" class="sResultat">En attente... </span>
+            </form>
+
+            <br />
+            <span style="font-size:9px;">
+                Avertissement : L'application prévoit tous les scénarios possibles, sauf un (et
+                il est de taille).
+            </span>
+
+
+        </p>
+    </div>
+
+</body>
+</html>
+
+

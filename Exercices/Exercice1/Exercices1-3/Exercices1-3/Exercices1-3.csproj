@@ -169,6 +169,7 @@
     <Content Include="Views\Serie01\CalculatriceV2.cshtml" />
     <Content Include="Views\Serie02\CalculatriceV3.cshtml" />
     <Content Include="Views\Serie02\CalculatriceV4.cshtml" />
+    <Content Include="Views\Serie02\CalculatriceV5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

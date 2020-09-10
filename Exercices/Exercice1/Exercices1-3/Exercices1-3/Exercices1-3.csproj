@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Serie01Controller.cs" />
+    <Compile Include="Controllers\Serie02Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,6 +167,8 @@
     <Content Include="Views\Home\BienvenueAvecVue.cshtml" />
     <Content Include="Views\Serie01\CalculatriceV1.cshtml" />
     <Content Include="Views\Serie01\CalculatriceV2.cshtml" />
+    <Content Include="Views\Serie02\CalculatriceV3.cshtml" />
+    <Content Include="Views\Serie02\CalculatriceV4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

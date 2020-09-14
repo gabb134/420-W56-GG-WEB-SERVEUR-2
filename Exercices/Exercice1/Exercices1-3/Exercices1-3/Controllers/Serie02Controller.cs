@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exercices1_3.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -67,11 +68,70 @@ namespace Exercices1_3.Controllers
                 case "%":
                     ViewBag.Resultat = double.Parse(tbNombre1) / 100;
                     ViewBag.nomClass = "invisible";
-                    
+
                     break;
             }
             return View();
         }
+
+        [HttpGet]
+        public ActionResult CalculatriceV5()
+        {
+            ClassCalculatrice cal = new ClassCalculatrice();
+            cal.binVisible = false;
+            //calculatrice.Resultat = "";
+            // calculatrice.nomClass = "visible";
+            cal.Resultat = "En attente...";
+
+            return View(cal);
+        }
+        [HttpPost]
+        public ActionResult CalculatriceV5(ClassCalculatrice cal)
+        {
+    
+            cal.nomClass = "visible";
+
+            if (cal.ddlOperateur == null)
+            {
+                cal.Resultat = "En attente123...";
+              //  cal.Resultat = cal.ddlOperateur;
+
+            }
+            else
+            {
+                switch (cal.ddlOperateur)
+                {
+                    case "+":
+                        cal.Resultat = "15"; //(cal.dblNombre1 + cal.dblNombre2).ToString();
+                        break;
+                    case "-":
+                        cal.Resultat = (cal.dblNombre1 - cal.dblNombre2).ToString();
+                        break;
+                    case "x":
+                        cal.Resultat = (cal.dblNombre1 * cal.dblNombre2).ToString();
+                        break;
+                    case "/":
+                        cal.Resultat = (cal.dblNombre2 == 0) ? "Erreur, division par zero" : (cal.dblNombre1 / cal.dblNombre2).ToString();
+                        break;
+                    case "Mod":
+                        cal.Resultat = (cal.dblNombre1 % cal.dblNombre2).ToString();
+                        break;
+                    case "%":
+                        cal.Resultat = (cal.dblNombre1 / 100).ToString();
+                        cal.nomClass = "invisible";
+
+                        break;
+                }
+
+            }
+
+
+
+            return View(cal);
+        }
+
+
+
 
     }
 }

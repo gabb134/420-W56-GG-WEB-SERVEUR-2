@@ -1,4 +1,4 @@
-﻿
+﻿@model Exercices1_3.Models.ClassCalculatrice
 @{
     ViewBag.Title = "CalculatriceV5";
 }
@@ -7,12 +7,12 @@
 
 
 
-<!DOCTYPE html>
-
-<html>
+@using (Html.BeginForm())
+{ 
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>CalculatriceV5</title>
+
+    <title>Petite calculatrice entière (un classique !) utilisant les controles HTML</title>
     <style id="style" type="text/css">
         BODY, INPUT, SELECT {
             font-family: Verdana;
@@ -64,10 +64,9 @@
 <body>
     <div>
         <p class="sTitreApplication">
-            Petite calculatrice entière version 5 en MVC utilisant un modèle<br />
-            par Mohamed Airouche
-
-            <input type="submit" value="Recommencer" id="btnRecommencer" class="sRecommencer" onclick="location.href='/Serie02/CalculatriceV5'" />
+            Petite calculatrice entière en MVC utilisant les controles HTML<br />
+            par Gabriel Marrero
+            <input type="submit" name="btnRecommencer" value="Recommencer" id="btnRecommencer" class="sRecommencer" onclick="location.href='/Serie02/CalculatriceV5'" />
         </p>
         <p class="sTitreSection">
             Présentation
@@ -82,34 +81,50 @@
             Entrez un premier nombre, l'opérateur, puis un deuxième nombre. Cliquez ensuite
             sur le bouton "=" pour effectuer l'opération arithmétique.
         </p>
-
+        @using (Html.BeginForm("CalculatriceV5", "Serie02", FormMethod.Post))
+        {
         <p>
+            <!-- <input name="tbNombre1" type="text" maxlength="2" id="tbNombre1" class="sZoneNombre" /> -->
+            @{ /*    @Html.TextBox("tbNombre1", "", new { @class = "sZoneNombre", @maxlength = "2", @id = "tbNombre1", @type = "text" })*/}
+
+            @Html.TextBoxFor(model => model.dblNombre1, new { @class = "sZoneNombre", @maxlength = "2", @id = "tbNombre1" })
+
+            <!-- mettre des html helpers-->
+
+            @Html.DropDownListFor(model=>model.ddlOperateur, new List<SelectListItem>
+            { new SelectListItem {Text= "" , Value = ""},
+            new SelectListItem {Text= "+" , Value = "+"},
+            new SelectListItem {Text= "-" , Value = "-"},
+            new SelectListItem {Text= "x" , Value = "x"},
+            new SelectListItem {Text= "/" , Value = "/"},
+            new SelectListItem {Text= "Mod" , Value = "Mod"},
+            new SelectListItem {Text= "%" , Value = "%"}})
+
+            <!--        <input name="tbNombre2" type="text" maxlength="2" id="tbNombre2" class="sZoneNombre" /> -->
+
+            @{ /*    @Html.TextBox("tbNombre2", "", new { @class = "sZoneNombre " + (String)Model.nomClass, @maxlength = "2", @id = "tbNombre2", @type = "text" }) */}
+
+            @Html.TextBoxFor(model => model.dblNombre2, new { @class = "sZoneNombre " + Html.DisplayFor(model => model.nomClass).ToString(), @maxlength = "2", @id = "tbNombre2" })
+
+            <input type="submit" name="btnCalcul" value="=" id="btnCalcul" />
 
 
-            <form action="/sol-exercices01/Serie02/CalculatriceV5" method="post">
-                <input class="sZoneNombre" data-val="true" data-val-number="Le champ intNombre1 doit être un nombre." data-val-required="Le champ intNombre1 est requis." id="intNombre1" maxlength="2" name="intNombre1" type="text" value="0" /><select id="ddlOperateur" name="ddlOperateur" onChange="this.form.submit()">
-                    <option value="-1"></option>
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="x">*</option>
-                    <option value="/">/</option>
-                    <option value="Mod">Mod</option>
-                    <option value="%">%</option>
-                </select><input class="sZoneNombre visible" data-val="true" data-val-number="Le champ intNombre2 doit être un nombre." data-val-required="Le champ intNombre2 est requis." id="intNombre2" maxlength="2" name="intNombre2" type="text" value="0" />            <input type="submit" name="btnCalcul" value="=" id="btnCalcul" />
-                <span id="lblVerdictFinal" class="sResultat">En attente... </span>
-            </form>
+            <span id="lblVerdictFinal" class="sResultat">
 
+                @Html.LabelFor(model => model.Resultat, Html.DisplayFor(model => model.Resultat).ToString(), new { @class = "sResultat" })
+
+
+
+            </span>
             <br />
             <span style="font-size:9px;">
                 Avertissement : L'application prévoit tous les scénarios possibles, sauf un (et
                 il est de taille).
             </span>
-
-
         </p>
+        }
     </div>
-
 </body>
-</html>
+}
 
 

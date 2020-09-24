@@ -1,0 +1,95 @@
+﻿@model Exercices1_3.Models.ModelSerie03
+@{
+   Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <title>Affichage d'un nombre à partir d'une liste déroulante</title>
+
+   <style id="style" type="text/css">
+      BODY, INPUT, SELECT {
+         font-family: Verdana;
+         font-size: 16px;
+      }
+
+      .sTitreApplication {
+         font-size: 32px;
+         margin-top: 0px;
+      }
+
+      .sTitreSection {
+         font-size: 24px;
+      }
+
+      .sRecommencer {
+         font-size: 10px;
+         vertical-align: 3px;
+      }
+
+      .sReduit {
+         font-size: 10px;
+      }
+
+      .visible {
+         display: normal;
+      }
+
+      .invisible {
+         display: none;
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="divEntete">
+      <p class="sTitreApplication">
+         Affichage d'un nombre à partir d'une liste déroulante<br />
+         par Mohamed Airouche
+         <input type="submit" value="Recommencer" id="btnRecommencer" class="sRecommencer" onclick="location.href='@Url.Action("Index", "Serie03", null)'" />
+
+      </p>
+   </div>
+  
+   <form id="frmSaisie" method="post">
+      <div id="divListeCategoriesNombres" class="visible">
+         Sélectionnez la catégorie de nombres que vous désirez afficher :
+
+         @Html.DropDownListFor(model => model.Categorie, (IEnumerable<SelectListItem>)ViewBag.categories, htmlAttributes: new { onChange = "this.form.submit()" })
+
+         <br /><br />
+
+      </div>
+      @{
+         var class1 = "visible";
+         var class2 = "invisible";
+         if (Model.Categorie == 0 || Model.Categorie == -1)
+         {
+            class1 = "invisible"; Model.Nombre = -1; //class2 = "invisible";
+         }
+
+      }
+      <div id="divListeNombres" class="@class1">
+         Sélectionnez le nombre en tant que tel :
+         @Html.DropDownListFor(Model => Model.Nombre, (IEnumerable<SelectListItem>)ViewBag.Nombre, htmlAttributes: new { onChange = "this.form.submit()" })
+         <br /><br />
+      </div>
+      @{
+         class2 = @ViewBag.nombreVisible;
+         
+      }
+      <div id="divAffichageNombre" class="@class2">
+
+         Le nombre sélectionné est @Html.DisplayFor(model => model.Nombre)
+
+      </div>
+      <div id="divCopyright" visible="true">
+         <p class="sReduit">
+            <br /><br />
+            &copy; Département d'informatique G.-G.
+         </p>
+      </div>
+   </form>
+</body>
+</html>

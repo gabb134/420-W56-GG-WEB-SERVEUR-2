@@ -1,0 +1,36 @@
+﻿model IEnumerable<_02_Demo.Models.Auto>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container-fluid">
+   <div class="row d-inline-flex">
+      @foreach (var item in Model)
+      {
+
+         <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+            <div class="card m-3" style="min-width: 18rem; max-width: 20%">
+
+               <div class=" card-body-header"> <h4> Identificateur : @item.Nom@item.id </h4> </div>
+
+               <img class="card-img-top imageThumbnail" style="max-width: 100%;  max-height : 50%;" src="@Url.Content("~/Images/"+item.Nom +".png")" alt="Card image">
+               <div class="card-footer">
+                  <h4>Marque : @item.Marque </h4>
+                  <h4 class="card-title"> Modèle : @item.Modèle </h4>
+                  <p class="card-text">Couleur : @item.Couleur</p>
+                  <a href="@Url.Action("Details", "Auto", new { id = item.id })" class="btn btn-primary m-1"> Détails </a>
+                  <a href="@Url.Action("Edit", "Auto", new { id = item.id })" class="btn btn-success m-1"> Edit</a>
+                  <a href="@Url.Action("Delete", "Auto", new { id = item.id })" class="btn btn-danger m-1"> Edit</a>
+
+               </div>
+            </div>
+            <br /><br />
+
+         </div>
+
+      }
+
+   </div>
+</div>

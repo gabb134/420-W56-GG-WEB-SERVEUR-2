@@ -1,0 +1,85 @@
+﻿
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>DemoHtmlHelper</title>
+</head>
+<body>
+   <div>
+      @using (Html.BeginForm("DemoHtmlHelper", "Accueil", FormMethod.Post))
+      {
+         <br />
+
+         @Html.Label("UserName", "Utilisateur", null)
+         @Html.TextBox("UserName")
+         <br /><br />
+
+         @Html.Label("UserPhone", "Téléphone", null)
+         @Html.TextBox("UserPhone")
+         <br /><br />
+         @Html.Label("UserEmail", "Email", null)
+         @Html.TextBox("UserEmail")
+         <br /><br />
+         @Html.Label("UserPassword", "Mot de passe", null)
+         @Html.Password("UserPassword")
+         <br /><br />
+         @Html.Label("M")
+         @Html.RadioButton("M", new { value = "Male" })
+         @Html.Label("F")
+         @Html.RadioButton("F", new { value = "Female" })
+
+         <br /><br />
+
+         @Html.Label("UserCountry")
+
+         @Html.DropDownList("UserCountry", new SelectList(
+          new List<SelectListItem>()
+          {
+               new SelectListItem(){Value="1",Text="Canada"},
+               new SelectListItem(){Value="2",Text="USA"},
+
+          }, "Value", "Text"))
+
+         <br /><br />
+         <input type="submit" value="Submit" />
+      }
+
+      <form action="/DemoHtmlHelper" method="post">
+         <br /><br />
+         <label for="UserName">Utilisateur </label>
+         <input id="UserName" name="UserName" type="text" value="" />
+         <br /><br />
+         <label for="UserPhone">Téléphone</label>
+         <input id="UserPhone" name="UserPhone" type="text" value="" />
+         <br /><br />
+         <label for="UserEmail">Email</label>
+         <input id="UserEmail" name="UserEmail" type="text" value="" />
+         <br /><br />
+         <label for="UserPassword">Mot de passe </label>
+         <input id="UserPassword" name="UserPassword" type="password" />
+         <br /><br />
+         <label for="M">M</label>
+         <input id="M" name="M" type="radio" value="{ value = Male }" />
+         <label for="F">F</label>
+         <input id="F" name="F" type="radio" value="{ value = Female }" />
+         <br /><br />
+         <label for="UserCountry">Pays</label>
+         <select id="UserCountry" name="UserCountry">
+            <option value="1">Canada</option>
+            <option value="2">USA</option>
+         </select>
+         <br /><br />
+
+         <input type="submit" value="Submit" />
+      </form>
+      
+
+   </div>
+</body>
+</html>

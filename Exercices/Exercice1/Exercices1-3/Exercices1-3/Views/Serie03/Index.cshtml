@@ -1,0 +1,105 @@
+﻿@model Exercices1_3.Models.ModelSerie03
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <head runat="server">
+        <title>Affichage d'un nombre à partir d'une liste déroulante</title>
+
+        <style id="style" type="text/css">
+            BODY, INPUT, SELECT {
+                font-family: Verdana;
+                font-size: 16px;
+            }
+
+            .sTitreApplication {
+                font-size: 32px;
+                margin-top: 0px;
+            }
+
+            .sTitreSection {
+                font-size: 24px;
+            }
+
+            .sRecommencer {
+                font-size: 10px;
+                vertical-align: 3px;
+            }
+
+            .sReduit {
+                font-size: 10px;
+            }
+
+            .visible {
+                display: normal;
+            }
+
+            .invisible {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="divEntete">
+            <p class="sTitreApplication">
+                Affichage d'un nombre à partir d'une liste déroulante<br />
+                par Gabriel Marrero
+                <input type="submit" value="Recommencer" id="btnRecommencer" class="sRecommencer" onclick="location.href='/Serie03/Index'" />
+
+            </p>
+        </div>
+
+        @using (Html.BeginForm("Index", "Serie03", FormMethod.Post))
+        {
+        <div id="divListeCategoriesNombres" class="visible">
+            Sélectionnez la catégorie de nombres que vous désirez afficher :
+
+         
+
+            @Html.DropDownListFor(model=>model.categorie, (IEnumerable<SelectListItem>) ViewBag.categories, htmlAttributes : new { onchange = "this.form.submit()"}) 
+
+
+            <br /><br />
+
+        </div>
+
+            <div id="divListeNombres" class="invisible">
+                Sélectionnez le nombre en tant que tel :
+                <select data-val="true" data-val-number="Le champ Nombre doit être un nombre." data-val-required="Le champ Nombre est requis." id="Nombre" name="Nombre" onChange="this.form.submit()">
+                    <option value="-1">S&#233;lectionnez</option>
+                    <option value="0">0</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                </select>
+                <br /><br />
+            </div>
+
+            <div id="divAffichageNombre" class="invisible">
+
+                Le nombre sélectionné est -1
+
+            </div>
+            <div id="divCopyright" visible="true">
+                <p class="sReduit">
+                    <br /><br />
+                    &copy; Département d'informatique G.-G.
+                </p>
+            </div>
+        }
+    </body>
+}
+

@@ -1,0 +1,70 @@
+﻿<style>
+   table, th, td {
+      border: 1px solid black;
+      padding: 15px;
+   }
+
+   thead {
+      background-color: skyblue;
+      color: white;
+   }
+</style>
+@{
+   ViewBag.Title = "Index";
+}
+
+<h2>Différentes façons de lier la liste déroulante Razor dans ASP.NET MVC 5</h2>
+<table>
+   <tr>
+      <th> Méthodes de liaison</th>
+      <th> La liste déroulante</th>
+
+   </tr>
+   <tr>
+      <td> Remplissage avec des données dans le code (Hardcoded Data)</td>
+      <td>
+         @Html.DropDownList("MySkills", new List<SelectListItem>
+         {
+            new SelectListItem{ Text="ASP.NET MVC", Value = "1" },
+            new SelectListItem{ Text="ASP.NET WEB API", Value = "2" },
+            new SelectListItem{ Text="ENTITY FRAMEWORK", Value = "3" },
+            new SelectListItem{ Text="DOCUSIGN", Value = "4" },
+            new SelectListItem{ Text="ORCHARD CMS", Value = "5" },
+            new SelectListItem{ Text="JQUERY", Value = "6" },
+            new SelectListItem{ Text="ZENDESK", Value = "7" },
+            new SelectListItem{ Text="LINQ", Value = "8" },
+            new SelectListItem{ Text="C#", Value = "9" },
+            new SelectListItem{ Text="GOOGLE ANALYTICS", Value = "10" },
+         })
+      </td>
+   </tr>
+   <tr>
+      <td> Remplir une liste déroulante à l'aide de Viewbag </td>
+      <td>
+         @Html.DropDownList("MySkills", (IEnumerable
+        <SelectListItem>)ViewBag.MySkills)
+      </td>
+   </tr>
+   <tr>
+      <td> Remplir une liste déroulante à l'aide de ViewData </td>
+      <td>
+         @Html.DropDownList("MySkills", (IEnumerable
+        <SelectListItem>)ViewData["MySkills"])
+      </td>
+   </tr>
+   <tr>
+      <td> Remplir une liste déroulante à l'aide de TempData </td>
+      <td>
+         @Html.DropDownList("MySkills", (IEnumerable
+        <SelectListItem>)TempData["MySkills"])
+      </td>
+   </tr>
+   <tr>
+      <td> Remplir une liste déroulante à l'aide de Enum </td>
+      <td> @Html.DropDownList("MySkills", new SelectList(ViewBag.MySkillEnum, "Value", "Text")) </td>
+   </tr>
+</table>
+
+
+
+

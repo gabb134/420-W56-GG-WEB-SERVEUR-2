@@ -1,0 +1,41 @@
+﻿@{
+   Layout = null;
+}
+
+@model _01_exemple_introduction_MVC_template.Models.Etudiant
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>Details</title>
+</head>
+<body>
+   <table>
+      <tr>
+         <td>
+            @Html.DisplayNameFor(model => model.Id)
+         </td>
+         <td>
+            : @Html.DisplayFor(model => model.Id)
+         </td>
+      </tr>
+      <tr>
+         <td>
+            @Html.DisplayNameFor(model => model.Nom)
+         </td>
+         <td>
+            : @Html.DisplayFor(model => model.Nom)
+         </td>
+      </tr>
+      <tr>
+         <td>
+            @Html.DisplayNameFor(model => model.Age)
+         </td>
+         <td>
+            : @Html.DisplayFor(model => model.Age)
+         </td>
+      </tr>
+   </table>
+</body>
+</html>

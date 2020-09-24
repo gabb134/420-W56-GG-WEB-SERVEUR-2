@@ -1,0 +1,180 @@
+﻿@model _02_Demo.Models.ModeleFormulaire
+
+ @{
+   Layout = null;
+  }
+
+ <!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+   <meta name="viewport" content="width=device-width" />
+
+   <title>Action10Get</title>
+
+</head>
+
+<body>
+    <h3>Formulaire ASP.NET MVC - 5</h3>
+   @using (Html.BeginForm("Action10Post", "First"))
+      {
+      <table>
+      
+
+            <thead >
+         
+               <tr>
+                  <th > LabelFor </th>
+                  <th > EditorFor </th>
+                  <th > DisplayFor </th>
+ 
+               </tr>
+     
+      </thead >
+
+      <tbody>
+
+         <tr>
+
+
+            <td> @Html.LabelFor(m => m.Text) </td>
+
+
+            <td> @Html.EditorFor(m => m.Text) </td>
+
+
+            <td> @Html.DisplayFor(m => m.Text) </td>
+
+
+         </tr>
+
+
+         <tr>
+           
+
+            <td> @Html.LabelFor(m => m.MultiLineText) </td>
+   
+            <td> @Html.EditorFor(m => m.MultiLineText) </td>
+
+            <td> @Html.DisplayFor(m => m.MultiLineText) </td>
+
+
+         </tr>
+   
+         <tr>
+
+            <td> @Html.LabelFor(m => m.Number) </td>
+
+
+            <td> @Html.EditorFor(m => m.Number) </td>
+  
+
+            <td> @Html.DisplayFor(m => m.Number) </td>
+
+
+         </tr>
+
+
+         <tr>
+            
+
+            <td> @Html.LabelFor(m => m.Decimal) </td>
+      
+
+            <td> @Html.EditorFor(m => m.Decimal) </td>
+  
+
+            <td> @Html.DisplayFor(m => m.Decimal) </td>
+
+
+         </tr>
+
+         <tr>
+  
+
+            <td> @Html.LabelFor(m => m.Tel) </td>
+      
+
+            <td> @Html.EditorFor(m => m.Tel) </td>
+
+            <td> @Html.DisplayFor(m => m.Tel) </td>
+
+
+         </tr>
+        
+         <tr>
+      
+            <td> @Html.LabelFor(m => m.Date) </td>
+ 
+
+            <td> @Html.EditorFor(m => m.Date) </td>
+     
+
+            <td> @Html.DisplayFor(m => m.Date) </td>
+        
+
+         </tr>
+ 
+
+         <tr>
+        
+
+            <td> @Html.LabelFor(m => m.Time) </td>
+         
+            <td> @Html.EditorFor(m => m.Time) </td>
+         
+
+            <td> @Html.DisplayFor(m => m.Time) </td>
+      
+
+         </tr>
+
+
+         <tr>
+            <td> @Html.LabelFor(m => m.HiddenInput) </td>
+
+
+               <td> @Html.EditorFor(m => m.HiddenInput) </td>
+          <td> @Html.DisplayFor(m => m.HiddenInput) </td>
+          </tr>
+          <tr>
+             <td> @Html.LabelFor(m => m.Boolean) </td>
+             <td> @Html.EditorFor(m => m.Boolean) </td>
+             <td> @Html.DisplayFor(m => m.Boolean) </td>
+          </tr>
+          <tr>
+             <td> @Html.LabelFor(m => m.Email) </td>
+             <td> @Html.EditorFor(m => m.Email) </td>
+             <td> @Html.DisplayFor(m => m.Email) </td>
+          </tr>
+          <tr>
+             <td> @Html.LabelFor(m => m.Url) </td>
+             <td> @Html.EditorFor(m => m.Url) </td>
+             <td> @Html.DisplayFor(m => m.Url) </td>
+          </tr>
+          <tr>
+             <td> @Html.LabelFor(m => m.Password) </td>
+             <td> @Html.EditorFor(m => m.Password) </td>
+             <td> @Html.DisplayFor(m => m.Password) </td>
+          </tr>
+          <tr>
+             <td> @Html.LabelFor(m => m.Currency) </td>
+             <td> @Html.EditorFor(m => m.Currency) </td>
+             <td> @Html.DisplayFor(m => m.Currency) </td>
+          </tr>
+          <tr>
+             <td> @Html.LabelFor(m => m.CreditCard) </td>
+             <td> @Html.EditorFor(m => m.CreditCard) </td>
+             <td> @Html.DisplayFor(m => m.CreditCard) </td>
+          </tr>
+      </tbody>    
+ </table >
+ <input type = "submit" value = "Valider" />
+ }
+
+</body>
+
+</html>

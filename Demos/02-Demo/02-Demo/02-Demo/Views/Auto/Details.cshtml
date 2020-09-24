@@ -1,0 +1,62 @@
+﻿@model _02_Demo.Models.Auto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+   <h4>Auto</h4>
+   <hr />
+   <dl class="dl-horizontal">
+      <dt>
+         @Html.DisplayNameFor(model => model.Nom)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.Nom)
+      </dd>
+
+      <dt>
+         @Html.DisplayNameFor(model => model.Marque)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.Marque)
+      </dd>
+
+      <dt>
+         @Html.DisplayNameFor(model => model.Modèle)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.Modèle)
+      </dd>
+
+      <dt>
+         @Html.DisplayNameFor(model => model.Couleur)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.Couleur)
+      </dd>
+
+   </dl>
+   <div class=" card-body-header"> <h4> Identificateur : @Model.Nom@Model.id </h4> </div>
+
+   <img class="card-img-top imageThumbnail" style="max-width: 100%;  max-height : 100%;" src="@Url.Content("~/Images/"+@Model.Nom +".png")" alt="Card image">
+   <div class="card-footer">
+      <h4>Marque : @Model.Marque </h4>
+      <h4 class="card-title"> Modèle : @Model.Modèle </h4>
+      <p class="card-text">Couleur : @Model.Couleur</p>
+      <a href="@Url.Action("Index", "Auto", new { id = Model.id })" class="btn btn-primary m-1"> Retour à la liste </a>
+      <a href="@Url.Action("Edit", "Auto", new { id = Model.id })" class="btn btn-success m-1"> Edit</a>
+      
+
+   </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

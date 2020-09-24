@@ -1,0 +1,64 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Etat</title>
+</head>
+<body>
+   <div>
+      @{
+         ViewBag.Title = "Index";
+      }
+
+
+      @*
+      <div class="navbar navbar-inverse">
+         <div class="navbar-inner">
+            <div class="container">
+               <span class="label label-info">420-W56 </span><h1> Programmation Web serveur II</h1>
+            </div>
+         </div>
+      </div>
+      *@
+      @{
+         string image = "on";
+         if (ViewBag.etat == "on")
+         {
+            image = "on.png";
+            ViewBag.etat = "off";
+         }
+         else
+         {
+            image = "off.png";
+            ViewBag.etat = "on";
+
+         }
+         /*
+         if ($image == "off")
+         $anti = "on";
+         else    $anti = "off";
+         */
+      }
+
+      <div class="container">
+         <div class="row">
+            <h1>Ampoule - Programmation Web serveur II 420-W56</h1>
+            <img src="@Url.Content("~/Images/"+@image)" height="439" /><br />
+
+         </div>
+         <div class="row col-md-4">
+            <hr />
+            <a href="@ViewBag.etat" class="btn btn-large btn-danger btn-block">Mettre l'ampoule &agrave; @ViewBag.etat</a>
+            @using (Html.BeginForm("Etat", "Ampoule", new { id = @ViewBag.etat }, FormMethod.Post, null))
+            {
+               <input type="submit" name="btn" value="changer l'état" id="btn" />
+            }
+         </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>DetailsViewBag</title>
+</head>
+<body>
+   <table>
+      <tr>
+         <td>
+            EtudientId
+         </td>
+         <td>
+            : @ViewBag.etudiant.Id
+         </td>
+      </tr>
+      <tr>
+         <td>
+            EtudientNom
+         </td>
+
+         <td>
+            : @ViewBag.etudiant.Nom
+         </td>
+      </tr>
+      <tr>
+         <td>
+            Age
+         </td>
+         <td>
+            : @ViewBag.etudiant.Age
+         </td>
+      </tr>
+   </table>
+</body>
+</html>

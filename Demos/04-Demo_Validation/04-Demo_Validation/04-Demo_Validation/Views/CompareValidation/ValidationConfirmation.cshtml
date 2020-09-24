@@ -1,0 +1,40 @@
+﻿@model _04_Demo_Validation.Models.Model2
+@{
+   ViewBag.Title = "ValidationConfirmation";
+}
+
+
+Confirmation du changement de mot de passe
+<br />
+À votre demande, aucune information n'est affichée.
+
+<div>
+   <h4>Les données reçues</h4>
+   <hr />
+   <dl class="dl-horizontal">
+      <dt>
+         @Html.DisplayNameFor(model => model.MotPassePrecedent)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.MotPassePrecedent)
+      </dd>
+
+      <dt>
+         @Html.DisplayNameFor(model => model.NouveauMotPasse1)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.NouveauMotPasse1)
+      </dd>
+
+      <dt>
+         @Html.DisplayNameFor(model => model.NouveauMotPasse2)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.NouveauMotPasse2)
+      </dd>
+
+   </dl>
+</div>

@@ -1,0 +1,21 @@
+﻿@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>DemoHTTPGetHTTPPost</title>
+</head>
+<body>
+   <div>
+      <h3>@ViewBag.message</h3>
+      @using (Html.BeginForm("DemoHttpPost", "Demo", FormMethod.Post))
+      {
+         <input type="submit" name="btn" value="HTTPPost message" id="btn" />
+      }
+   </div>
+</body>
+</html>

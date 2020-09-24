@@ -1,0 +1,70 @@
+﻿
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>DemoRazor</title>
+</head>
+<body>
+   <div>
+      @*
+         Utilisez @ pour écrire le code côté serveur.
+      *@
+      <h1>Démo de la syntaxe Razor</h1>
+      <h2>@DateTime.Now.ToShortDateString()</h2>
+
+      @*
+         Le code du côté serveur commence par @ {* code *} :
+      *@
+      @{
+         var date = DateTime.Now.ToShortDateString();
+         var message = "Bonjour!";
+      }
+
+      <h2>La date d'aujourd'hui est le: @date </h2>
+      <h3> @message </h3>
+      @*
+         Utilisez @: ou <text>   </ <text> pour afficher le texte du bloc de code.
+      *@
+      @{
+         var date1 = DateTime.Now.ToShortDateString();
+         string message1 = "Bonjour!";
+         @: La date du jour est: @date <br />
+         @message1
+      }
+
+      @{
+         var date2 = DateTime.Now.ToShortDateString();
+         string message2 = "Bonjour!";
+         <text> La date du jour est: </text> @date2 <br />
+         @message2
+      }
+      @*
+         la condition ifcommence par @if { }
+      *@
+      @if (DateTime.IsLeapYear(DateTime.Now.Year))
+      {
+         @DateTime.Now.Year @: est une année bissextile.
+      }
+      else
+      {
+         @DateTime.Now.Year @: n'est pas une année bissextile.<br />
+      }
+
+      @*
+         la boucle For commence avec @for{ }
+      *@
+      @for (int i = 0; i < 5; i++)
+      {
+         @i.ToString() <br />
+      }
+
+
+   </div>
+</body>
+</html>

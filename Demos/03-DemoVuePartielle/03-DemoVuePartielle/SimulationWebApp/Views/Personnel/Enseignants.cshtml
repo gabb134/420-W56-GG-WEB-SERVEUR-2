@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SimulationWebApp.Models.Personnel>
+
+@{
+    ViewBag.Title = "Enseignants";
+}
+
+<h2></h2>
+
+<div class="panel panel-primary">
+    <div class="panel panel-heading">Liste des enseignants</div>
+    <div class="panel panel-body">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prénom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sexe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    Ancienneté
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Département)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prénom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sexe)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnnéeAncienneté)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Département)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

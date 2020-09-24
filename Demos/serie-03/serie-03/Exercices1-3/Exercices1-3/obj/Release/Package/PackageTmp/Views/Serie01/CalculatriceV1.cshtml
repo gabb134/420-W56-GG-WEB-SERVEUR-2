@@ -1,0 +1,100 @@
+﻿
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+
+   <title>Petite calculatrice entière (un classique !) utilisant les controles HTML</title>
+   <style id="style" type="text/css">
+      BODY, INPUT, SELECT {
+         font-family: Verdana;
+         font-size: 16px;
+      }
+
+      .sRecommencer {
+         font-size: 10px;
+         vertical-align: 3px;
+      }
+
+      .sResultat {
+         color: White;
+         background-color: Red;
+         font-weight: bold;
+         border: solid 1px red;
+         padding-left: 2px;
+         padding-right: 2px;
+      }
+
+      .sRouge {
+         color: White;
+         background-color: Red;
+      }
+
+      .sTitreApplication {
+         font-size: 32px;
+         margin-top: 0px;
+      }
+
+      .sTitreSection {
+         font-size: 24px;
+      }
+
+      .sZoneNombre {
+         width: 25px;
+         text-align: right;
+      }
+   </style>
+</head>
+<body>
+   <div>
+      <p class="sTitreApplication">
+         Petite calculatrice entière en MVC utilisant les controles HTML<br />
+         par Mohamed Airouche
+         <input type="submit" name="btnRecommencer" value="Recommencer" id="btnRecommencer" class="sRecommencer" onclick="location.href='@Url.Action("CalculatriceV1", "Serie01", null)'" />
+      </p>
+      <p class="sTitreSection">
+         Présentation
+      </p>
+      <p>
+         Le but de cette application est de simuler une petite calculatrice entière.
+      </p>
+      <p class="sTitreSection">
+         Consignes
+      </p>
+      <p>
+         Entrez un premier nombre, l'opérateur, puis un deuxième nombre. Cliquez ensuite
+         sur le bouton "=" pour effectuer l'opération arithmétique.
+      </p>
+      <form method="get">
+         <p>
+            <input name="tbNombre1" type="text" maxlength="2" id="tbNombre1" value=@ViewBag.nombre1 class="sZoneNombre" />
+
+            <select name="ddlOperateur" id="ddlOperateur">
+               <option value=""></option>
+               <option value="+">+</option>
+               <option value="-">-</option>
+               <option value="x">x</option>
+               <option value="/">/</option>
+
+            </select>
+
+            <input name="tbNombre2" type="text" maxlength="2" id="tbNombre2" value=@ViewBag.nombre2 class="sZoneNombre" />
+
+            <input type="submit" name="btnCalcul" value="=" id="btnCalcul" />
+
+            <span id="lblVerdictFinal" class="sResultat">@ViewBag.resultat</span>
+            <br />
+            <span style="font-size:9px;">
+               Avertissement : L'application prévoit tous les scénarios possibles, sauf un (et
+               il est de taille).
+            </span>
+         </p>
+      </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@model _04_Demo_Validation.Models.Model1
+@{
+   ViewBag.Title = "ValidationConfirmation";
+}
+
+
+Confirmation du la validation du côté serveur
+
+<div>
+   <h4>Les données reçues </h4>
+   <hr />
+   <dl class="dl-horizontal">
+      <dt>
+         @Html.DisplayNameFor(model => model.Nom)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.Nom)
+      </dd>
+
+      <dt>
+         @Html.DisplayNameFor(model => model.Prenom)
+      </dt>
+
+      <dd>
+         @Html.DisplayFor(model => model.Prenom)
+      </dd>
+
+   </dl>
+</div>

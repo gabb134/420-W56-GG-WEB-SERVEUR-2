@@ -1,0 +1,110 @@
+﻿
+@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>Petite calculatrice entière en MVC</title>
+   <style id="style" type="text/css">
+      BODY, INPUT, SELECT {
+         font-family: Verdana;
+         font-size: 16px;
+      }
+
+      .sRecommencer {
+         font-size: 10px;
+         vertical-align: 3px;
+      }
+
+      .sResultat {
+         color: White;
+         background-color: Red;
+         font-weight: bold;
+         border: solid 1px red;
+         padding-left: 2px;
+         padding-right: 2px;
+      }
+
+      .sRouge {
+         color: White;
+         background-color: Red;
+      }
+
+      .sTitreApplication {
+         font-size: 32px;
+         margin-top: 0px;
+      }
+
+      .sTitreSection {
+         font-size: 24px;
+      }
+
+      .sZoneNombre {
+         width: 25px;
+         text-align: right;
+      }
+   </style>
+</head>
+<body>
+   <div>
+      <p class="sTitreApplication">
+         Petite calculatrice entière en MVC utilisant HTML helpers<br />
+         par Mohamed Airouche
+
+         <input type="submit" value="Recommencer" id="btnRecommencer" class="sRecommencer" onclick="location.href='@Url.Action("CalculatriceV2", "Serie01", null)'" />
+      </p>
+      <p class="sTitreSection">
+         Présentation
+      </p>
+      <p>
+         Le but de cette application est de simuler une petite calculatrice entière.
+      </p>
+      <p class="sTitreSection">
+         Consignes
+      </p>
+      <p>
+         Entrez un premier nombre, l'opérateur, puis un deuxième nombre. Cliquez ensuite
+         sur le bouton "=" pour effectuer l'opération arithmétique.
+      </p>
+
+      <p>
+
+
+         @using (Html.BeginForm("CalculatriceV2", "Serie01", FormMethod.Get))
+         {
+            @Html.TextBox("tbNombre1", null, new { @maxlength = "2", @class = "sZoneNombre" })
+            @Html.DropDownList("ddlOperateur",
+            new SelectList(
+                new List<SelectListItem>
+                 {
+                             new SelectListItem { Text = string.Empty, Value = "-1"},
+                             new SelectListItem { Text = "+", Value = "+"},
+                             new SelectListItem { Text = "-", Value = "-"},
+                             new SelectListItem { Text = "*", Value = "x"},
+                             new SelectListItem { Text = "/", Value = "/"},
+
+                 },"Value", "Text")
+            )
+
+            @Html.TextBox("tbNombre2", null, new { @maxlength = "2", @class = "sZoneNombre" })
+
+            <input type="submit" name="btnCalcul" value="=" id="btnCalcul" />
+            <span id="lblVerdictFinal" class="sResultat">@ViewBag.resultat</span>
+         }
+
+
+         <br />
+         <span style="font-size:9px;">
+            Avertissement : L'application prévoit tous les scénarios possibles, sauf un (et
+            il est de taille).
+         </span>
+
+
+      </p>
+   </div>
+</body>
+</html>

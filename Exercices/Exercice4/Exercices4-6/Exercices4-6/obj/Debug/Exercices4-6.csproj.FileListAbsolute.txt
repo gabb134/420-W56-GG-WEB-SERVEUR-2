@@ -76,8 +76,8 @@ C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\E
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\obj\Debug\Exercices4-6.csprojAssemblyReference.cache
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\obj\Debug\Exercices4-6.csproj.CoreCompileInputs.cache
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\obj\Debug\Exercices4-6.csproj.CopyComplete
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\obj\Debug\Exercices4-6.dll
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\obj\Debug\Exercices4-6.pdb
+C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice4\Exercices4-6\Exercices4-6\obj\Debug\Exercices4-6.csprojAssemblyReference.cache

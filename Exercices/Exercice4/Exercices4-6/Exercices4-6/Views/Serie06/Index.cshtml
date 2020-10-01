@@ -1,0 +1,293 @@
+﻿@model Exercices4_6.Models.Employee2
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<!DOCTYPE html>
+
+@using (Html.BeginForm())
+{
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Saisie des données d'un employé</title>
+        <style type="text/css">
+            BODY, INPUT, SELECT, .sNormal {
+                font-family: verdana;
+                font-size: 16px;
+            }
+
+            .sBouton {
+                color: white;
+                background-color: black;
+                font-weight: bold;
+            }
+
+            .sDroite {
+                text-align: right;
+            }
+
+            .sL60px {
+                width: 60px;
+            }
+
+            .sL70px {
+                width: 70px;
+            }
+
+            .sL80px {
+                width: 80px;
+            }
+
+            .sL100px {
+                width: 100px;
+            }
+
+            .sL120px {
+                width: 120px;
+            }
+
+            .sL200px {
+                width: 200px;
+            }
+
+            .sMessageErreur {
+                font-size: 12px;
+                font-weight: bold;
+                color: red;
+            }
+
+            .sReduit {
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            .sRouge {
+                color: red;
+            }
+
+            .sTitreApplication {
+                margin-top: 0px;
+                font-size: 32px;
+                font-weight: bold;
+            }
+
+            .sTitreSection {
+                font-size: 24px;
+            }
+
+            .sZoneSaisie {
+                color: blue;
+                background-color: white;
+                font-weight: bold;
+            }
+
+            .auto-style1 {
+                font-size: 12px;
+                font-weight: bold;
+                color: red;
+                height: 18px;
+            }
+        </style>
+
+        <!--<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>-->
+
+    </head>
+
+    <!-- http://www.aspsnippets.com/articles/disable-enter-key-in-textbox-to-avoid-postback-in-asp.net.aspx -->
+    <body onkeydown="return (event.keyCode!=13)">
+        @using (Html.BeginForm("Index", "Serie06", FormMethod.Post))
+        {
+            <p class="sTitreApplication">
+                Saisie des données de l'employé<br />
+                <span class="sTitreSection">par Gabriel Marrero</span>
+                <input type="button" value="Recommencer" id="btnRecommencer" class="sBouton sReduit" onclick="location.href='/Serie06/Index'" />
+
+            </p>
+            <p class="sTitreSection">Présentation</p>
+            <p>
+                Entrez les informations demandées. Lorsque vous aurez terminé, cliquez sur le bouton VALIDER.
+            </p>
+
+            <input type="submit" name="btnSoumettre" value="Valider" id="btnSoumettre" CssClass="sBouton"  />
+
+            <p class="sTitreSection">Informations personnelles</p>
+            <table>
+                <tr>
+                    <td>No Empl</td>
+                    <td>Département</td>
+                    <td>N.A.S.p</td>
+                    <td>Semaine</td>
+                    <td>Code postal</td>
+                    <td>Courriel</td>
+                </tr>
+                <tr>
+                    <td>
+
+                        @Html.EditorFor(model => model.noEmploye, new { htmlAttributes = new { @class = " sZoneSaisie sL70px", @type = "text" } })
+                    </td>
+
+
+                    <td>
+                        <!--  <select class="sZoneSaisie" data-val="true" data-val-required="Erreur !" id="ddlDepartement" name="ddlDepartement">
+                            <option value=""></option>
+                            <option selected="selected" value="0">Cadre</option>
+                            <option value="1">Enseignant</option>
+                            <option value="2">&#201;tudiant</option>
+                            <option value="3">Professionnel</option>
+                            <option value="4">Soutien</option>
+                        </select> -->
+                        @Html.DropDownListFor(model => model.ddlDepartement, new SelectList(new List<SelectListItem>() {
+                       new SelectListItem() { Text = "", Value = ""},
+                        new SelectListItem() { Text = "Cadre", Value = "0"},
+                        new SelectListItem() { Text = "Enseignant", Value = "1"},
+                        new SelectListItem() { Text = "Étudiant", Value = "2"},
+                        new SelectListItem() { Text = "Professionnel", Value = "3"},
+                        new SelectListItem() { Text = "Soutien", Value = "4"}}, "Value", "Text"), htmlAttributes: new { @class = "sZoneSaisie" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.nas, new { htmlAttributes = new { @class = " sZoneSaisie sL70px", @type = "text" } })
+                    </td>
+                    <td>
+                        <!--  <input class="sZoneSaisie sL120px" data-val="true" data-val-date="Le champ tbSemaine doit être une date." data-val-range="Erreur !" data-val-range-max="08/31/2020 00:00:00" data-val-range-min="01/01/2011 00:00:00" data-val-required="Erreur !" id="tbSemaine" maxlength="10" name="tbSemaine" type="text" value="" />-->
+                        @Html.EditorFor(model => model.dateSemaine, new { htmlAttributes = new { @class = " sZoneSaisie sL120px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.codePostal, new { htmlAttributes = new { @class = " sZoneSaisie sL100px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.courriel, new { htmlAttributes = new { @class = " sZoneSaisie sL100px", @type = "text" } })
+                        @@cgodin.qc.ca
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style1">
+
+                        @Html.ValidationMessageFor(Model => Model.noEmploye)
+                    </td>
+                    <td class="auto-style1">
+                        @Html.ValidationMessageFor(Model => Model.ddlDepartement)
+                    </td>
+                    <td class="auto-style1">
+                        @Html.ValidationMessageFor(Model => Model.nas)
+                    </td>
+                    <td class="auto-style1">
+                        @Html.ValidationMessageFor(Model => Model.dateSemaine)
+                    </td>
+                    <td class="auto-style1">
+                        @Html.ValidationMessageFor(Model => Model.codePostal)
+                    </td>
+                    <td class="auto-style1">
+                        @Html.ValidationMessageFor(Model => Model.courriel)
+                    </td>
+                </tr>
+            </table>
+            <p class="sTitreSection">Heures travaillées</p>
+            <table>
+                <tr>
+                    <td class="sDroite">Dim</td>
+                    <td class="sDroite">Lun</td>
+                    <td class="sDroite">Mar</td>
+                    <td class="sDroite">Mer</td>
+                    <td class="sDroite">Jeu</td>
+                    <td class="sDroite">Ven</td>
+                    <td class="sDroite">Sam</td>
+                </tr>
+                <tr>
+                    <td>
+
+                        @Html.EditorFor(model => model.dimanche, new { htmlAttributes = new { @class = " sZoneSaisie sL60px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.lundi, new { htmlAttributes = new { @class = " sZoneSaisie sL60px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.mardi, new { htmlAttributes = new { @class = " sZoneSaisie sL60px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.mercredi, new { htmlAttributes = new { @class = " sZoneSaisie sL60px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.jeudi, new { htmlAttributes = new { @class = " sZoneSaisie sL60px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.vendredi, new { htmlAttributes = new { @class = " sZoneSaisie sL60px", @type = "text" } })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.samedi, new { htmlAttributes = new { @class = " sZoneSaisie sL60px", @type = "text" } })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="sMessageErreur">
+                        @Html.ValidationMessageFor(Model => Model.dimanche)
+                    </td>
+                    <td class="sMessageErreur">
+                        @Html.ValidationMessageFor(Model => Model.lundi)
+                    </td>
+                    <td class="sMessageErreur">
+                        @Html.ValidationMessageFor(Model => Model.mardi)
+                    </td>
+                    <td class="sMessageErreur">
+                        @Html.ValidationMessageFor(Model => Model.mercredi)
+                    </td>
+                    <td class="sMessageErreur">
+                        @Html.ValidationMessageFor(Model => Model.jeudi)
+                    </td>
+                    <td class="sMessageErreur">
+                        @Html.ValidationMessageFor(Model => Model.vendredi)
+                    </td>
+                    <td class="sMessageErreur">
+                        @Html.ValidationMessageFor(Model => Model.samedi)
+                    </td>
+                </tr>
+            </table>
+        }
+        <hr />
+        <table class="sReduit">
+            <tr>
+                <td colspan="2">
+                    Le bouton VALIDER permet de valider les données saisies.<br /><br />
+
+                </td>
+            </tr>
+            <tr>
+                <td>No empl</td>
+                <td>: Numéro d'employé (30000 à 50000)</td>
+            </tr>
+            <tr>
+                <td>Département</td>
+                <td>: Cadre, Enseignant, Étudiant, Professionnel ou Soutien</td>
+            </tr>
+            <tr>
+                <td>N.A.S.p</td>
+                <td>: 999 999 soit les six premiers chiffres du numéro d'assurance sociale (p=partiel)</td>
+            </tr>
+            <tr>
+                <td>Semaine</td>
+                <td>: AAAA/MM/JJ soit la date correspondant au premier jour de la semaine de travail qui est un dimanche (2011/01/02 à 2020/08/31)</td>
+            </tr>
+            <tr>
+                <td>Code postal</td>
+                <td>: A9A 9A9 où A=Lettre majuscule et 9=Chiffre</td>
+            </tr>
+            <tr>
+                <td>Courriel</td>
+                <td>: Nom de l'utilisateur au collège Gérald-Godin (pour le moment 1 à 3 lettres, un point, 2 lettres et plus)</td>
+            </tr>
+            <tr>
+                <td>Dim à Sam</td>
+                <td>: Nombre d'heures travaillées (0 à 23,99 ou 0 à 23.99)</td>
+            </tr>
+        </table>
+        <hr />
+    </body>
+}
+
+
+
+

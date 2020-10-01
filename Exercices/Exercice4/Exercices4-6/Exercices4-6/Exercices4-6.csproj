@@ -123,10 +123,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Serie04Controller.cs" />
     <Compile Include="Controllers\Serie05Controller.cs" />
+    <Compile Include="Controllers\Serie06Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Employee2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +169,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Serie04\Index.cshtml" />
     <Content Include="Views\Serie05\Index.cshtml" />
+    <Content Include="Views\Serie06\Index.cshtml" />
+    <Content Include="Views\Serie06\Informationstransmises.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

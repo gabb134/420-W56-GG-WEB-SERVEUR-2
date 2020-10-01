@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoEmployeeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'DemoEmployeeDB.dbo.tbEmployee' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="tbEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DemoEmployeeDBModelStoreContainer">
+    <EntitySet Name="tbEmployee" EntityType="Self.tbEmployee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbEmployee].[EmployeeId] AS [EmployeeId], 
+    [tbEmployee].[FirstName] AS [FirstName], 
+    [tbEmployee].[LastName] AS [LastName], 
+    [tbEmployee].[Gender] AS [Gender], 
+    [tbEmployee].[Department] AS [Department], 
+    [tbEmployee].[City] AS [City]
+    FROM [dbo].[tbEmployee] AS [tbEmployee]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

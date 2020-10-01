@@ -1,0 +1,43 @@
+﻿@model ProduitApp.Service.Produit
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<br />
+<div class="panel panel-primary">
+    <div class="panel panel-heading">Suppresion d'un produit</div>
+    <div class="panel panel-body">
+        <h4>Voulez-vous vraiment supprimer ce produit?</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dblPrix)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dblPrix)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.strDesignation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.strDesignation)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Supprimer" class="btn btn-default" /> |
+                @Html.ActionLink("Retour à la liste", "Index")
+            </div>
+        }
+    </div>
+</div>

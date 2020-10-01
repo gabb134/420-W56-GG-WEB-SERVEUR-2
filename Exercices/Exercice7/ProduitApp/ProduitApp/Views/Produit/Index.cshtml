@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProduitApp.Service.Produit>
+
+@{
+    ViewBag.Title = "Produit";
+}
+
+
+<br />
+<p>
+    @Html.ActionLink("Ajouter un produit", "Create")
+</p>
+<div class="panel panel-primary">
+    <div class="panel panel-heading">Liste des produit</div>
+    <div class="panel panel-body">
+        <table class="table">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.strDesignation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dblPrix)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.strDesignation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dblPrix)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Modifier", "Edit", new { id = item.IdProduit }) |
+                        @Html.ActionLink("Détails", "Details", new { id = item.IdProduit }) |
+                        @Html.ActionLink("Supprimer", "Delete", new { id = item.IdProduit })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

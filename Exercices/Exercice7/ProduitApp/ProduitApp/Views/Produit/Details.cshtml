@@ -1,0 +1,40 @@
+﻿@model ProduitApp.Service.Produit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+
+<div class="panel panel-primary">
+    <div class="panel panel-heading">Détails de produitt</div>
+    <div class="panel panel-body">
+        <div>
+            <h4>Les informations de produit</h4>
+            <hr />
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.dblPrix)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dblPrix)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.strDesignation)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.strDesignation)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Modifier", "Edit", new { id = Model.IdProduit }) |
+            @Html.ActionLink("Retour à la liste", "Index")
+        </p>
+    </div>
+</div>

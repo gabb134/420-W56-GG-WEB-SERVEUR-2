@@ -1,0 +1,166 @@
+﻿@model Exercices4_6.Models.Employee2
+@{
+    ViewBag.Title = "Informationstransmises";
+}
+
+<h2>Informationstransmises</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+
+    <title>Informations transmises</title>
+    <style type="text/css">
+
+        BODY {
+            font-family: verdana;
+            font-size: 16px;
+        }
+
+
+        TABLE {
+            border-collapse: collapse;
+        }
+
+
+        TD {
+            border: solid 1px black;
+            padding: 3px;
+        }
+
+
+        .s70px {
+            width: 70px;
+            text-align: right;
+        }
+
+
+        .s200px {
+            width: 200px;
+        }
+
+
+        .sTitreApplication {
+            font-size: 24px;
+        }
+
+
+        .sDonnees {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+ 
+
+        <p class="sTitreApplication">Informations transmises</p>
+        <table>
+
+            <tr>
+
+                <td class=s200px>No employ&eacute; : </td>
+                <td class=s200px sDonnees>  @Html.DisplayTextFor(model => model.noEmploye) </td>
+            </tr>
+            <tr>
+
+                <td class=s200px>D&eacute;partement : </td>
+                <td class=s200px sDonnees>  @Html.DisplayTextFor(model => model.ddlDepartement) </td>
+            </tr>
+            <tr>
+
+                <td class=s200px>N.A.S. : </td>
+                <td class=s200px sDonnees> @Html.DisplayTextFor(model => model.nas) </td>
+            </tr>
+            <tr>
+
+                <td class=s200px>Semaine d&eacute;butant le : </td>
+
+                <td class=s200px sDonnees> @Html.DisplayTextFor(model => model.dateSemaine)</td>
+            </tr>
+            <tr>
+
+                <td class=s200px>Code postal : </td>
+                <td class=s200px sDonnees>  @Html.DisplayTextFor(model => model.codePostal) </td>
+            </tr>
+            <tr>
+
+                <td colspan=2>
+
+                    Courriel : <span class=sDonnees>  @Html.DisplayTextFor(model => model.courriel)@@cgodin.qc.ca</span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+
+            <tr>
+
+                <td class=s70px>
+
+                    Dimanche
+                </td>
+                <td class=s70px>
+
+                    Lundi
+                </td>
+                <td class=s70px>
+
+                    Mardi
+                </td>
+                <td class=s70px>
+
+                    Mercredi
+                </td>
+                <td class=s70px>
+
+                    Jeudi
+                </td>
+                <td class=s70px>
+
+                    Vendredi
+                </td>
+                <td class=s70px>
+
+                    Samedi
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class=s70px sDonnees>
+
+                    @Html.DisplayTextFor(model => model.dimanche) h
+                </td>
+                <td class=s70px sDonnees>
+
+                    @Html.DisplayTextFor(model => model.lundi) h
+                </td>
+                <td class=s70px sDonnees>
+
+                    @Html.DisplayTextFor(model => model.mardi) h
+                </td>
+                <td class=s70px sDonnees>
+
+                    @Html.DisplayTextFor(model => model.mercredi) h
+                </td>
+                <td class=s70px sDonnees>
+
+                    @Html.DisplayTextFor(model => model.jeudi) h
+                </td>
+                <td class=s70px sDonnees>
+
+                    @Html.DisplayTextFor(model => model.vendredi) h
+                </td>
+                <td class=s70px sDonnees>
+
+                    @Html.DisplayTextFor(model => model.samedi) h
+                </td>
+            </tr>
+        </table>
+    
+    </body>
+</html>

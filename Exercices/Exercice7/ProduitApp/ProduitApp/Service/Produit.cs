@@ -8,8 +8,8 @@ namespace ProduitApp.Service
 {
     public class Produit
     {
-       // [Required(ErrorMessage ="Ce champ est obligatoire!")]
-        public int IdProduit { get; set; }
+        // [Required(ErrorMessage ="Ce champ est obligatoire!")]
+        public int IdProduit { get; set; } = 0;
         [Required(ErrorMessage = "Ce champ est obligatoire!")]
         [Range(50, 1000000, ErrorMessage = "Plage !")]
         public double dblPrix { get; set; }

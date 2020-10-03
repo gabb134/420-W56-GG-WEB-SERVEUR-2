@@ -61,13 +61,10 @@ namespace ProduitApp.Controllers
 
         // POST: Produit/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Produit produit)
+        public ActionResult Edit(Produit produit)
         {
          
-               if(id!= produit.IdProduit)
-                {
-                    return HttpNotFound();
-                }
+          
                 if (ModelState.IsValid)
                 {
                     produitDataAccess.UpdateProduit(produit);

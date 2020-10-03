@@ -16,6 +16,7 @@
 
                 <h3>Editer les champs à modifier pour le produit</h3>
                 <div class="form-group">
+                    @Html.HiddenFor(model => model.IdProduit)
                     @Html.LabelFor(model => model.dblPrix, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.dblPrix, new { htmlAttributes = new { @class = "form-control" } })

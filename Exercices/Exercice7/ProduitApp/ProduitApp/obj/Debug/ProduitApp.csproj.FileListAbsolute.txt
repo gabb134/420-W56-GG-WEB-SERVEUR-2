@@ -81,3 +81,9 @@ C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\P
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\obj\Debug\ProduitApp.dll
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\obj\Debug\ProduitApp.pdb
 C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\obj\Debug\ProduitApp.csprojAssemblyReference.cache
+C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\bin\System.Net.Http.Formatting.dll
+C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\bin\System.Web.Http.dll
+C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\bin\System.Web.Http.WebHost.dll
+C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\bin\System.Net.Http.Formatting.xml
+C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\bin\System.Web.Http.xml
+C:\Users\GabrielMarrero\Documents\420-W56-GG-WEB-SERVEUR-2\Exercices\Exercice7\ProduitApp\ProduitApp\bin\System.Web.Http.WebHost.xml

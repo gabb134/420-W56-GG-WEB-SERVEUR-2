@@ -15,7 +15,7 @@ namespace ProduitApp.Controllers
         public ProduitController()
         {
             //produitDataAccess = new ProduitServiceImp();
-            produitDataAccess = new ProduitServiceImpBD();
+            produitDataAccess = new ProduitServiceImp();
         }
         public ActionResult Index()
         {
